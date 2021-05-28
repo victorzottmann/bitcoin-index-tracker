@@ -15,9 +15,13 @@ const App = () => {
 
   useEffect(() => {
     console.log('In useEffect')
-    const data = { '2021-05-27': 10.004, '2021-05-28': 50000.302 }
-    setBitcoinData(data)
-  }, [])
+    fetch(
+      `https://api.coindesk.com/v1/bpi/historical/close.json?currency=${currency}`
+    )
+      .then((res) => res.json())
+      .then((data) => setBitcoinData(data.bpi))
+      .catch((error) => console.log(error.message))
+  }, [currency])
 
   return (
     <div>
