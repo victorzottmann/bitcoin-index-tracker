@@ -26,6 +26,10 @@ const App = () => {
   return (
     <div>
       <h1>Bitcoin Index</h1>
+      <p>
+        Powered by{' '}
+        <a href={`https://www.coindesk.com/price/bitcoin`}>CoinDesk</a>
+      </p>
       <CurrencySelector
         currency={currency}
         handleCurrencyChange={handleCurrencyChange}
