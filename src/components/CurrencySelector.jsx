@@ -5,7 +5,7 @@ const CurrencySelector = (props) => {
   // assigning them as consts to props make them unchangeable
   const { currency, handleCurrencyChange } = props
 
-  const handleSelectChange = (event) => {
+  const handleSelect = (event) => {
     handleCurrencyChange(event.target.value)
   }
 
@@ -13,7 +13,7 @@ const CurrencySelector = (props) => {
     <div>
       <span>Select your currency:</span>
       <br />
-      <select onChange={handleSelectChange}>
+      <select onChange={handleSelect}>
         {currencies.map(({ currency, country }, index) => {
           return (
             <option key={`${index}-${currency}`} value={currency}>
